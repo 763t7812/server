@@ -24,7 +24,7 @@ app.get('/',(req,res)=>{
 
 io.on('connection',(socket)=>{
     socket.emit('me',socket.id)
-    axios.get('http://localhost:5001/api/join/'+socket.id)
+    axios.get('https://api-t3gj.onrender.com/api/join/'+socket.id)
     .then(data=>{})
     .catch(err=>{})
 
@@ -38,7 +38,7 @@ io.on('connection',(socket)=>{
     });
 
     socket.on('disconnect',()=>{
-        axios.get('http://localhost:5001/api/leave/'+socket.id)
+        axios.get('https://api-t3gj.onrender.com/api/leave/'+socket.id)
         .then(data=>{})
         .catch(err=>{})
         socket.broadcast.emit("callended",{id:socket.id})
