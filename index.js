@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 8000
 
 
 app.get('/',(req,res)=>{
-    res.status(404).send();
+    res.json('Socket io is running now!')
 })
 
 io.on('connection',(socket)=>{
